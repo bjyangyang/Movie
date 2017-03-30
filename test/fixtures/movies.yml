@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  片名: MyString
+  简介: MyText
+
+two:
+  片名: MyString
+  简介: MyText
