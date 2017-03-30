@@ -7,7 +7,7 @@ class MoviesController < ApplicationController
 
   def show
     @movie = Movie.find(params[:id])
-    @critics = @movie.critics
+    @critics = @movie.critics.order("created_at DESC")
   end
 
   def edit
