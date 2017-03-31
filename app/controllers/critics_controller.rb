@@ -1,5 +1,6 @@
 class CriticsController < ApplicationController
   before_action :authenticate_user!, :only => [:new, :create]
+  before_action :favorite_and_comment, :only => [:new, :create]
 
   def new
     @movie = Movie.find(params[:movie_id])
@@ -45,6 +46,14 @@ class CriticsController < ApplicationController
 
 
   private
+
+  def favorite_and_comment
+    @movie = Movie.find(params[:movie_id])
+    if !current_user.is_member_of?(@movie)
+        redirect_to movie_path(@movie)
+        flash[:warning] = "电影必须join movie才能评论"
+    end
+  end
 
   def critic_params
     params.require(:critic).permit(:content)

@@ -3,10 +3,10 @@
     <span class="pull-right">
       <% if current_user && current_user.is_member_of?(@movie) %>
         <label class="label label-success"> movie成员 </label>
-        <%= link_to("Quit Movie", quit_movie_path(@movie), method: :post, class: "btn btn-default") %>
+        <%= link_to("Quit Movie", quit_movie_path(@movie), method: :critic, class: "btn btn-default") %>
       <% else %>
         <label class="label label-warning"> 不是movie成员 </label>
-        <%= link_to("Join Movie", join_movie_path(@movie), method: :post, class: "btn btn-default") %>
+        <%= link_to("Join Movie", join_movie_path(@movie), method: :critic, class: "btn btn-default") %>
       <% end %>
     </span>
     <%= link_to("写评论", new_movie_critic_path(@movie), class: "btn btn-default pull-right")%>
