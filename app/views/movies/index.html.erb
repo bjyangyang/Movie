@@ -16,7 +16,7 @@
         <tr>
           <td>#</td>
           <td><%= link_to(movie.片名, movie_path(movie)) %></td>
-          <td><%= movie.简介 %></td>
+          <td><%= simple_format(movie.简介) %></td>
           <td><%= movie.user.email %></td>
           <td>
               <% if current_user && current_user == movie.user %>
