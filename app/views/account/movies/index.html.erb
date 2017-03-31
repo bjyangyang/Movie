@@ -18,7 +18,7 @@
         <tr>
           <td> # </td>
           <td> <%= link_to(movie.片名, movie_path(movie)) %> </td>
-          <td> <%= movie.简介 %> </td>
+          <td> <%= render_movie_简介(movie) %> </td>
           <td> <%= movie.critics.count %> </td>
           <td> <%= movie.updated_at %> </td>
         </tr>
